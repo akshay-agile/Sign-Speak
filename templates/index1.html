@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign'Speak - AI Sign Language Interpreter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #e0f7fa 0%, #fff9e6 50%, #fce4ec 100%);
+            background-attachment: fixed;
+        }
+        
+        /* Header Gradient Animation */
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .header-gradient {
+            background: linear-gradient(270deg, #00bcd4, #03a9f4, #00acc1);
+            background-size: 200% 200%;
+            animation: gradient-shift 8s ease infinite;
+        }
+        
+        /* Card Styles */
+        .card {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+            transform: translateY(-5px);
+        }
+        
+        /* Tab Styles */
+        .tab-btn {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-btn.active {
+            background: linear-gradient(135deg, #00bcd4, #03a9f4);
+            color: white;
+            box-shadow: 0 8px 25px rgba(0, 188, 212, 0.3);
+        }
+        
+        .tab-btn:not(.active):hover {
+            background: rgba(0, 188, 212, 0.08);
+        }
+        
+        /* Button Styles */
+        .btn-cyan {
+            background: linear-gradient(135deg, #00bcd4, #03a9f4);
+            box-shadow: 0 8px 20px rgba(0, 188, 212, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-cyan:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(0, 188, 212, 0.4);
+        }
+        
+        .btn-orange {
+            background: linear-gradient(135deg, #ff9800, #ff5722);
+            box-shadow: 0 8px 20px rgba(255, 152, 0, 0.3);
+        }
+        
+        .btn-orange:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(255, 152, 0, 0.4);
+        }
+        
+        .btn-pink {
+            background: linear-gradient(135deg, #e91e63, #9c27b0);
+            box-shadow: 0 8px 20px rgba(233, 30, 99, 0.3);
+        }
+        
+        .btn-pink:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(233, 30, 99, 0.4);
+        }
+        
+        .btn-green {
+            background: linear-gradient(135deg, #4caf50, #8bc34a);
+            box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+        }
+        
+        .btn-green:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(76, 175, 80, 0.4);
+        }
+        
+        .btn-gray {
+            background: linear-gradient(135deg, #90a4ae, #78909c);
+        }
+        
+        .btn-gray:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Video Container */
+        .video-container {
+            border-radius: 20px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Translation Box */
+        .translation-box {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-radius: 20px;
+            border: 2px solid #ffb74d;
+            min-height: 150px;
+        }
+        
+        /* Stat Box */
+        .stat-box {
+            background: linear-gradient(135deg, rgba(0, 188, 212, 0.08), rgba(3, 169, 244, 0.08));
+            border-left: 4px solid #00bcd4;
+            border-radius: 16px;
+            padding: 20px;
+        }
+        
+        /* Info Box */
+        .info-box {
+            background: linear-gradient(135deg, #e1f5fe, #b3e5fc);
+            border-left: 5px solid #0288d1;
+            border-radius: 16px;
+        }
+        
+        /* Toggle Switch */
+        .toggle-switch:checked + .toggle-bg {
+            background: linear-gradient(135deg, #4caf50, #8bc34a);
+        }
+        
+        .toggle-switch:checked + .toggle-bg .toggle-dot {
+            transform: translateX(100%);
+        }
+        
+        .toggle-dot {
+            transition: transform 0.3s ease;
+        }
+        
+        /* Upload Zone */
+        .upload-zone {
+            border: 3px dashed #00bcd4;
+            border-radius: 20px;
+            background: rgba(0, 188, 212, 0.03);
+            transition: all 0.3s ease;
+        }
+        
+        .upload-zone:hover {
+            background: rgba(0, 188, 212, 0.08);
+            border-color: #0288d1;
+            transform: scale(1.01);
+        }
+        
+        /* Sign Media */
+        .sign-media {
+            width: 180px;
+            height: 180px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            background: #f5f5f5;
+        }
+        
+        .sign-media img,
+        .sign-media video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Sign Card Highlight */
+        .sign-highlight {
+            animation: highlight-glow 1s ease-in-out;
+        }
+        
+        @keyframes highlight-glow {
+            0%, 100% { 
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            }
+            50% { 
+                box-shadow: 0 8px 30px rgba(0, 188, 212, 0.5);
+            }
+        }
+        
+        /* Progress Bar */
+        .progress-bar {
+            height: 8px;
+            background: rgba(0, 188, 212, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00bcd4, #03a9f4);
+            transition: width 0.3s ease;
+        }
+        
+        /* Loading Spinner */
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .spinner {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 0.8s linear infinite;
+        }
+        
+        /* Speaking Indicator */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .speaking {
+            animation: pulse 1s ease-in-out infinite;
+        }
+        
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #00bcd4, #03a9f4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #00bcd4, #03a9f4);
+            border-radius: 10px;
+        }
+        
+        /* Fade In Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-gradient text-white py-6 shadow-lg">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <div class="bg-white/20 backdrop-blur-sm p-3 rounded-2xl">
+                        <i class="fas fa-hands text-4xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-3xl font-bold">SIGN'SPEAK</h1>
+                        <p class="text-sm opacity-90">AI Sign Language Interpreter</p>
+                    </div>
+                </div>
+                <div class="bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full">
+                    <i class="fas fa-language mr-2"></i>
+                    <span class="font-bold"><span id="signCount">{{ signs|length }}</span> Signs Available</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-6 py-8">
+        <!-- Tab Navigation -->
+        <div class="card p-2 mb-8">
+            <div class="grid grid-cols-2 gap-2">
+                <button onclick="switchTab('realtime')" id="tab-realtime" class="tab-btn active px-6 py-4 font-bold text-lg rounded-xl">
+                    <i class="fas fa-video mr-2"></i>Real-time Camera
+                </button>
+                <button onclick="switchTab('text-to-sign')" id="tab-text-to-sign" class="tab-btn px-6 py-4 font-bold text-lg rounded-xl text-gray-700">
+                    <i class="fas fa-keyboard mr-2"></i>Text-to-Sign
+                </button>
+            </div>
+        </div>
+
+        <!-- Real-time Tab Content -->
+        <div id="content-realtime" class="tab-content">
+            <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                <!-- Camera Feed Card -->
+                <div class="card p-6">
+                    <h2 class="text-2xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-camera text-cyan-500 mr-3 text-3xl"></i>
+                        Live Camera Feed
+                    </h2>
+                    <div class="video-container mb-6">
+                        <img id="videoFeed" alt="Camera Feed" class="hidden w-full">
+                        <div id="cameraPlaceholder" class="flex items-center justify-center h-96 text-white">
+                            <div class="text-center">
+                                <i class="fas fa-video text-6xl mb-4 opacity-70"></i>
+                                <p class="text-xl font-bold">Click "Start Camera" to begin</p>
+                                <p class="text-sm opacity-80 mt-2">Real-time sign language detection</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button onclick="startCamera()" id="startBtn" class="btn-cyan text-white font-bold py-3 px-6 rounded-xl transition">
+                            <i class="fas fa-play mr-2"></i>Start Camera
+                        </button>
+                        <button onclick="stopCamera()" id="stopBtn" class="btn-orange text-white font-bold py-3 px-6 rounded-xl transition opacity-50" disabled>
+                            <i class="fas fa-stop mr-2"></i>Stop Camera
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Translation Display Card -->
+                <div class="card p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-2xl font-bold flex items-center">
+                            <i class="fas fa-language text-orange-500 mr-3 text-3xl"></i>
+                            Live Translation
+                        </h2>
+                        <!-- TTS Toggle -->
+                        <label class="flex items-center cursor-pointer space-x-3">
+                            <span class="font-semibold text-gray-700">TTS</span>
+                            <div class="relative">
+                                <input type="checkbox" id="ttsToggle" class="sr-only toggle-switch" onchange="toggleTTS()">
+                                <div class="toggle-bg w-14 h-7 bg-gray-300 rounded-full relative">
+                                    <div class="toggle-dot absolute w-5 h-5 bg-white rounded-full left-1 top-1 shadow"></div>
+                                </div>
+                            </div>
+                            <i class="fas fa-volume-up text-gray-600"></i>
+                        </label>
+                    </div>
+                    
+                    <div class="translation-box p-6 mb-6 relative">
+                        <p id="liveTranslation" class="text-2xl font-semibold text-gray-800">
+                            Start camera to see translations...
+                        </p>
+                        <div id="speakingIndicator" class="absolute top-4 right-4 hidden">
+                            <i class="fas fa-volume-up text-green-600 text-2xl speaking"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="stat-box">
+                            <p class="text-sm font-semibold text-gray-600 mb-1">Current Sign</p>
+                            <p id="currentSign" class="text-xl font-bold gradient-text">-</p>
+                        </div>
+                        <div class="stat-box">
+                            <p class="text-sm font-semibold text-gray-600 mb-1">Confidence</p>
+                            <p id="confidence" class="text-xl font-bold text-green-600">0%</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <button onclick="speakFullTranslation()" class="btn-pink text-white font-bold py-3 px-4 rounded-xl transition">
+                            <i class="fas fa-volume-up mr-2"></i>Speak All
+                        </button>
+                        <button onclick="clearTranslation()" class="btn-gray text-white font-bold py-3 px-4 rounded-xl transition">
+                            <i class="fas fa-trash mr-2"></i>Clear
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info Box -->
+            <div class="info-box p-6 mb-8">
+                <div class="flex items-start space-x-4">
+                    <i class="fas fa-info-circle text-blue-600 text-3xl"></i>
+                    <div>
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">How to Use</h3>
+                        <ul class="grid md:grid-cols-2 gap-2 text-gray-700">
+                            <li><i class="fas fa-check text-cyan-500 mr-2"></i>Click "Start Camera" to begin</li>
+                            <li><i class="fas fa-check text-cyan-500 mr-2"></i>Toggle TTS for automatic speech</li>
+                            <li><i class="fas fa-check text-cyan-500 mr-2"></i>Hold signs steady for 1-2 seconds</li>
+                            <li><i class="fas fa-check text-cyan-500 mr-2"></i>Ensure good lighting</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upload Section -->
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="card p-6">
+                    <h2 class="text-2xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-cloud-upload-alt text-purple-500 mr-3 text-3xl"></i>
+                        Upload Video File
+                    </h2>
+                    <form id="uploadForm" enctype="multipart/form-data">
+                        <div id="dropZone" class="upload-zone p-12 text-center cursor-pointer">
+                            <i class="fas fa-file-video text-6xl text-cyan-400 mb-4"></i>
+                            <p class="text-lg font-bold text-gray-700 mb-2">Drag & drop video here</p>
+                            <p class="text-gray-500 mb-4 text-sm">or</p>
+                            <label for="videoInput" class="btn-cyan text-white font-bold py-3 px-6 rounded-xl cursor-pointer inline-block">
+                                <i class="fas fa-folder-open mr-2"></i>Browse Files
+                            </label>
+                            <input type="file" id="videoInput" name="video" accept="video/*" class="hidden">
+                            <p class="text-xs text-gray-500 mt-4">Supports: MP4, AVI, MOV (Max 50MB)</p>
+                        </div>
+                        <div id="uploadProgress" class="mt-6 hidden">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-bold text-gray-700">Processing...</span>
+                                <span class="spinner"></span>
+                            </div>
+                            <div class="progress-bar">
+                                <div id="progressBar" class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="card p-6">
+                    <h2 class="text-2xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-file-alt text-green-500 mr-3 text-3xl"></i>
+                        Translation Result
+                    </h2>
+                    <div id="uploadResult" class="bg-gray-50 rounded-2xl p-8 min-h-[200px] flex items-center justify-center">
+                        <div class="text-center text-gray-400">
+                            <i class="fas fa-inbox text-6xl mb-3"></i>
+                            <p class="font-semibold">No results yet</p>
+                            <p class="text-sm">Upload a video to see translation</p>
+                        </div>
+                    </div>
+                    <button onclick="downloadResult()" id="downloadBtn" class="mt-6 w-full btn-green text-white font-bold py-3 px-6 rounded-xl transition hidden">
+                        <i class="fas fa-download mr-2"></i>Download Result
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Text-to-Sign Tab Content -->
+        <div id="content-text-to-sign" class="tab-content hidden">
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="card p-6">
+                    <h2 class="text-2xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-keyboard text-cyan-500 mr-3 text-3xl"></i>
+                        Enter Text
+                    </h2>
+                    <div class="mb-6">
+                        <label class="block text-sm font-bold text-gray-700 mb-3">
+                            Type words to translate to signs:
+                        </label>
+                        <textarea id="textInput" class="w-full p-4 border-2 border-gray-300 rounded-2xl focus:border-cyan-400 focus:outline-none resize-none text-lg" rows="6" placeholder="Example: HELLO THANKS AGREE BEAUTIFUL"></textarea>
+                        <p class="text-xs text-gray-500 mt-2">
+                            <i class="fas fa-info-circle text-cyan-400 mr-1"></i>
+                            Separate words with spaces. Available signs will be shown below.
+                        </p>
+                    </div>
+                    <button onclick="translateToSign()" class="w-full btn-cyan text-white font-bold py-4 px-6 rounded-xl transition mb-6">
+                        <i class="fas fa-language mr-2"></i>Translate to Signs
+                    </button>
+                    <div class="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-2xl p-5 border-2 border-cyan-200">
+                        <p class="font-bold text-gray-700 mb-2 flex items-center">
+                            <i class="fas fa-list text-cyan-500 mr-2"></i>
+                            Available Signs
+                        </p>
+                        <div id="availableSigns" class="text-sm text-gray-600 max-h-32 overflow-y-auto">
+                            Loading...
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-2xl font-bold flex items-center">
+                            <i class="fas fa-images text-orange-500 mr-3 text-3xl"></i>
+                            Sign Media
+                        </h2>
+                        <button onclick="playSequence()" id="playSequenceBtn" class="btn-green text-white font-bold py-2 px-5 rounded-xl transition hidden">
+                            <i class="fas fa-play mr-2"></i>Play Sequence
+                        </button>
+                    </div>
+                    <div id="signResults" class="space-y-4 max-h-[450px] overflow-y-auto pr-2">
+                        <div class="text-center text-gray-400 py-16">
+                            <i class="fas fa-hand-paper text-6xl mb-3"></i>
+                            <p class="font-semibold text-lg">No signs to display</p>
+                            <p class="text-sm">Translate text to see signs here</p>
+                        </div>
+                    </div>
+                    <div id="sequenceProgress" class="mt-6 hidden">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-bold text-gray-700">Playing:</span>
+                            <span id="currentSignText" class="font-bold gradient-text text-lg"></span>
+                        </div>
+                        <div class="progress-bar">
+                            <div id="sequenceBar" class="progress-fill" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white bg-opacity-80 mt-12 py-6 border-t-2 border-gray-200">
+        <div class="container mx-auto px-6 text-center">
+            <p class="font-bold text-gray-700 text-lg">&copy; 2024 Sign'Speak</p>
+            <p class="text-gray-600 text-sm">Built with Flask, TensorFlow & MediaPipe</p>
+        </div>
+    </footer>
+
+    <script>
+        // Global state
+        let cameraActive = false;
+        let currentResult = null;
+        let ttsEnabled = false;
+        let isSpeaking = false;
+        let predictionInterval = null;
+        let translationHistory = [];
+        let lastValidSign = null;
+        let lastValidConfidence = 0;
+        let lastValidTimestamp = 0;
+        let signSequence = [];
+        let sequenceIndex = 0;
+
+        // Tab switching
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('active');
+                el.classList.add('text-gray-700');
+            });
+            
+            document.getElementById(`content-${tab}`).classList.remove('hidden');
+            const tabBtn = document.getElementById(`tab-${tab}`);
+            tabBtn.classList.add('active');
+            tabBtn.classList.remove('text-gray-700');
+            
+            if (tab === 'text-to-sign') {
+                loadAvailableSigns();
+            }
+        }
+
+        // Camera functions
+        function startCamera() {
+            const videoFeed = document.getElementById('videoFeed');
+            const placeholder = document.getElementById('cameraPlaceholder');
+            const startBtn = document.getElementById('startBtn');
+            const stopBtn = document.getElementById('stopBtn');
+
+            startBtn.disabled = true;
+            startBtn.innerHTML = '<span class="spinner"></span> Starting...';
+
+            fetch('/start_camera', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        videoFeed.src = '/video_feed?' + new Date().getTime();
+                        videoFeed.classList.remove('hidden');
+                        placeholder.classList.add('hidden');
+                        startBtn.innerHTML = '<i class="fas fa-play mr-2"></i>Start Camera';
+                        stopBtn.disabled = false;
+                        stopBtn.classList.remove('opacity-50');
+                        cameraActive = true;
+                        document.getElementById('liveTranslation').textContent = 'Watching for signs...';
+                        translationHistory = [];
+                        lastValidSign = null;
+                        lastValidConfidence = 0;
+                        lastValidTimestamp = 0;
+                        startPredictionPolling();
+                    } else {
+                        alert('Failed to start camera: ' + (data.error || 'Unknown error'));
+                        startBtn.disabled = false;
+                        startBtn.innerHTML = '<i class="fas fa-play mr-2"></i>Start Camera';
+                    }
+                })
+                .catch(error => {
+                    alert('Error starting camera.');
+                    startBtn.disabled = false;
+                    startBtn.innerHTML = '<i class="fas fa-play mr-2"></i>Start Camera';
+                });
+        }
+
+        function stopCamera() {
+            const videoFeed = document.getElementById('videoFeed');
+            const placeholder = document.getElementById('cameraPlaceholder');
+            const startBtn = document.getElementById('startBtn');
+            const stopBtn = document.getElementById('stopBtn');
+
+            stopBtn.disabled = true;
+            stopBtn.innerHTML = '<span class="spinner"></span> Stopping...';
+
+            fetch('/stop_camera', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    videoFeed.src = '';
+                    videoFeed.classList.add('hidden');
+                    placeholder.classList.remove('hidden');
+                    startBtn.disabled = false;
+                    stopBtn.innerHTML = '<i class="fas fa-stop mr-2"></i>Stop Camera';
+                    stopBtn.disabled = true;
+                    stopBtn.classList.add('opacity-50');
+                    cameraActive = false;
+                    document.getElementById('liveTranslation').textContent = 'Start camera to see translations...';
+                });
+        }
+
+        function startPredictionPolling() {
+            if (predictionInterval) clearInterval(predictionInterval);
+            predictionInterval = setInterval(() => {
+                if (!cameraActive) { 
+                    clearInterval(predictionInterval); 
+                    return; 
+                }
+                fetch('/current_prediction')
+                    .then(response => response.json())
+                    .then(data => { updateLiveTranslation(data); });
+            }, 500);
+        }
+
+        function updateLiveTranslation(data) {
+            const currentSign = document.getElementById('currentSign');
+            const confidence = document.getElementById('confidence');
+            const liveTranslation = document.getElementById('liveTranslation');
+
+            const isPlaceholderMessage = data.sign === 'Waiting...' || data.sign === 'Low confidence' || data.sign === 'Camera stopped';
+
+            if (!isPlaceholderMessage && data.confidence >= 0.75) {
+                lastValidSign = data.sign;
+                lastValidConfidence = data.confidence;
+                lastValidTimestamp = Date.now();
+
+                currentSign.textContent = data.sign;
+                confidence.textContent = `${(data.confidence * 100).toFixed(1)}%`;
+                confidence.className = 'text-xl font-bold text-green-600';
+
+                if (translationHistory.length === 0 || translationHistory[translationHistory.length - 1] !== data.sign) {
+                    translationHistory.push(data.sign);
+                    if (translationHistory.length > 10) translationHistory.shift();
+                    liveTranslation.textContent = translationHistory.join(' ');
+
+                    if (ttsEnabled) {
+                        speakText(data.sign);
+                    }
+                }
+            } else {
+                if (lastValidSign) {
+                    const secondsSinceLastSign = (Date.now() - lastValidTimestamp) / 1000;
+                    if (secondsSinceLastSign < 5) {
+                        currentSign.textContent = lastValidSign;
+                    } else {
+                        currentSign.textContent = lastValidSign + ' (previous)';
+                    }
+                    confidence.textContent = `${(lastValidConfidence * 100).toFixed(1)}%`;
+                    confidence.className = 'text-xl font-bold text-gray-400';
+                } else {
+                    if (!isPlaceholderMessage) {
+                        currentSign.textContent = 'Detecting...';
+                        confidence.textContent = `${(data.confidence * 100).toFixed(1)}%`;
+                        confidence.className = 'text-xl font-bold text-yellow-500';
+                    }
+                }
+            }
+        }
+
+        function clearTranslation() {
+            translationHistory = [];
+            lastValidSign = null;
+            lastValidConfidence = 0;
+            lastValidTimestamp = 0;
+            document.getElementById('liveTranslation').textContent = cameraActive ? 'Watching for signs...' : 'Start camera to see translations...';
+            document.getElementById('currentSign').textContent = '-';
+            document.getElementById('confidence').textContent = '0%';
+            document.getElementById('confidence').className = 'text-xl font-bold text-gray-400';
+
+            if (cameraActive) {
+                fetch('/clear_prediction', { method: 'POST' })
+                    .then(response => response.json())
+                    .then(data => console.log('Prediction cleared'))
+                    .catch(error => console.error('Error clearing prediction:', error));
+            }
+        }
+
+        // TTS functions
+        function toggleTTS() {
+            const toggle = document.getElementById('ttsToggle');
+            ttsEnabled = toggle.checked;
+        }
+
+        function speakText(text) {
+            if (!text || isSpeaking) return;
+            isSpeaking = true;
+            document.getElementById('speakingIndicator').classList.remove('hidden');
+
+            fetch('/speak', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ text: text })
+            })
+            .then(response => response.json())
+            .then(data => {
+                setTimeout(() => {
+                    isSpeaking = false;
+                    document.getElementById('speakingIndicator').classList.add('hidden');
+                }, text.length * 50 + 500);
+            })
+            .catch(error => {
+                isSpeaking = false;
+                document.getElementById('speakingIndicator').classList.add('hidden');
+            });
+        }
+
+        function speakFullTranslation() {
+            const translation = document.getElementById('liveTranslation').textContent;
+            if (translation && translation !== 'Start camera to see translations...' && translation !== 'Watching for signs...') {
+                speakText(translation);
+            } else {
+                alert('No translation to speak!');
+            }
+        }
+
+        // Text-to-Sign functions
+        function loadAvailableSigns() {
+            fetch('/available_signs')
+                .then(r => r.json())
+                .then(data => {
+                    if (data && data.signs) {
+                        document.getElementById('availableSigns').textContent = data.signs.join(", ");
+                        document.getElementById('signCount').textContent = data.count;
+                    }
+                });
+        }
+
+        function translateToSign() {
+            const text = document.getElementById('textInput').value.trim();
+            if (!text) {
+                alert('Please enter some text');
+                return;
+            }
+
+            fetch('/text_to_sign', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ text: text })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (!data.success) {
+                    document.getElementById('signResults').innerHTML = `
+                        <div class="text-center text-red-400 py-16">
+                            <i class="fas fa-exclamation-circle text-6xl mb-3"></i>
+                            <p class="text-lg font-bold">Could not translate text</p>
+                            <p class="text-sm mt-2">${data.error || 'Unknown error'}</p>
+                        </div>`;
+                    document.getElementById('playSequenceBtn').classList.add('hidden');
+                    return;
+                }
+
+                if (!data.results || data.results.length === 0) {
+                    document.getElementById('signResults').innerHTML = `
+                        <div class="text-center text-gray-400 py-16">
+                            <i class="fas fa-question-circle text-6xl mb-3"></i>
+                            <p class="text-lg font-bold">No matching signs found</p>
+                        </div>`;
+                    document.getElementById('playSequenceBtn').classList.add('hidden');
+                    return;
+                }
+
+                signSequence = data.results;
+                sequenceIndex = 0;
+                let html = '';
+
+                data.results.forEach((item, idx) => {
+                    if (item.found) {
+                        html += `
+                        <div class="card p-4 flex items-center space-x-4 ${idx === 0 ? 'sign-highlight' : ''}">
+                            <div class="sign-media flex-shrink-0">
+                                ${item.type === "video" ?
+                                  `<video src="${item.video}" alt="${item.word} sign" autoplay loop muted></video>` :
+                                  `<img src="${item.image}" alt="${item.word} sign"/>`
+                                }
+                            </div>
+                            <div>
+                                <p class="text-xl font-bold gradient-text">${item.word}</p>
+                                <p class="text-gray-600 text-sm">${item.original_name}</p>
+                            </div>
+                        </div>`;
+                    } else {
+                        html += `
+                        <div class="card p-4 flex items-center space-x-4 opacity-50">
+                            <div class="sign-media bg-gray-200 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-question text-4xl text-gray-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-xl font-bold text-gray-400">${item.word}</p>
+                                <p class="text-sm text-gray-500">${item.message}</p>
+                            </div>
+                        </div>`;
+                    }
+                });
+
+                document.getElementById('signResults').innerHTML = html;
+                document.getElementById('playSequenceBtn').classList.remove('hidden');
+            })
+            .catch(error => {
+                document.getElementById('signResults').innerHTML = `
+                    <div class="text-center text-red-400 py-16">
+                        <i class="fas fa-exclamation-circle text-6xl mb-3"></i>
+                        <p class="text-lg font-bold">Request failed</p>
+                        <p class="text-sm mt-2">${error.message}</p>
+                    </div>`;
+                document.getElementById('playSequenceBtn').classList.add('hidden');
+            });
+        }
+
+        function playSequence() {
+            if (!signSequence || signSequence.length === 0) return;
+            sequenceIndex = 0;
+            document.getElementById('sequenceProgress').classList.remove('hidden');
+
+            function showNextSign() {
+                if (sequenceIndex >= signSequence.length) {
+                    document.getElementById('sequenceProgress').classList.add('hidden');
+                    document.querySelectorAll('#signResults .card').forEach(el => {
+                        el.classList.remove('sign-highlight');
+                    });
+                    return;
+                }
+
+                document.querySelectorAll('#signResults .card').forEach((el, idx) => {
+                    if (idx === sequenceIndex) el.classList.add('sign-highlight');
+                    else el.classList.remove('sign-highlight');
+                });
+
+                document.getElementById('currentSignText').textContent = signSequence[sequenceIndex].word;
+                document.getElementById('sequenceBar').style.width = ((sequenceIndex + 1) / signSequence.length * 100) + "%";
+                sequenceIndex += 1;
+                setTimeout(showNextSign, 1200);
+            }
+
+            showNextSign();
+        }
+
+        // Upload functions
+        document.getElementById('videoInput').addEventListener('change', e => handleFileSelect(e));
+        document.getElementById('dropZone').addEventListener('dragover', e => { 
+            e.preventDefault(); 
+            e.dataTransfer.dropEffect = 'copy'; 
+        });
+        document.getElementById('dropZone').addEventListener('drop', e => { 
+            e.preventDefault(); 
+            handleFileSelect(e); 
+        });
+
+        function handleFileSelect(evt) {
+            let file;
+            if (evt.dataTransfer && evt.dataTransfer.files.length) {
+                file = evt.dataTransfer.files[0];
+            } else if (evt.target && evt.target.files.length) {
+                file = evt.target.files[0];
+            }
+            if (!file) {
+                alert('No file selected');
+                return;
+            }
+            uploadVideo(file);
+        }
+
+        function uploadVideo(file) {
+            const formData = new FormData();
+            formData.append('video', file);
+
+            document.getElementById('uploadProgress').classList.remove('hidden');
+            document.getElementById('uploadResult').innerHTML = '<div class="flex items-center justify-center h-full"><span class="spinner"></span> <span class="ml-3 font-bold text-gray-600">Uploading...</span></div>';
+
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('uploadProgress').classList.add('hidden');
+                if (!data.success) {
+                    document.getElementById('uploadResult').innerHTML = `
+                        <div class="text-center text-red-400 py-12">
+                            <i class="fas fa-times-circle text-6xl mb-3"></i>
+                            <p class="text-lg font-bold">${data.error}</p>
+                        </div>`;
+                    document.getElementById('downloadBtn').classList.add('hidden');
+                } else {
+                    document.getElementById('uploadResult').innerHTML = `
+                        <div class="fade-in space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500 text-3xl"></i>
+                                <p class="text-xl font-bold text-gray-700">Translation Complete!</p>
+                            </div>
+                            <div class="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-xl p-4 border-2 border-cyan-200">
+                                <p class="text-sm font-semibold text-gray-600 mb-1">Translation:</p>
+                                <p class="text-2xl font-bold gradient-text">${data.translation || '[none]'}</p>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 border-2 border-gray-200">
+                                <p class="text-sm font-semibold text-gray-600 mb-2">Detected Signs:</p>
+                                <p class="text-gray-700">${data.detected_signs.map(ds => ds.sign).join(', ')}</p>
+                            </div>
+                            <p class="text-xs text-gray-500">Frames processed: ${data.total_frames}</p>
+                        </div>`;
+                    currentResult = data;
+                    document.getElementById('downloadBtn').classList.remove('hidden');
+                }
+            })
+            .catch(error => {
+                document.getElementById('uploadProgress').classList.add('hidden');
+                document.getElementById('uploadResult').innerHTML = `
+                    <div class="text-center text-red-400 py-12">
+                        <i class="fas fa-times-circle text-6xl mb-3"></i>
+                        <p class="text-lg font-bold">Upload failed</p>
+                    </div>`;
+                document.getElementById('downloadBtn').classList.add('hidden');
+            });
+        }
+
+        function downloadResult() {
+            if (!currentResult) return;
+            const blob = new Blob([JSON.stringify(currentResult, null, 2)], {type: "application/json"});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'translation_result.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Initialize on page load
+        document.addEventListener("DOMContentLoaded", () => { 
+            switchTab("realtime"); 
+        });
+    </script>
+</body>
+</html>

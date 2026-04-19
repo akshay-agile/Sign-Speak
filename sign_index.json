@@ -1,0 +1,1665 @@
+{
+  "a_lot": {
+    "original_name": "A LOT",
+    "type": "image",
+    "image_path": "/static/sign_images/a_lot.jpg",
+    "image_count": 4
+  },
+  "abuse": {
+    "original_name": "abuse",
+    "type": "video",
+    "image_path": "/static/sign_images/abuse.jpg",
+    "image_count": 5,
+    "video_path": "/static/sign_videos/abuse.mp4"
+  },
+  "afraid": {
+    "original_name": "afraid",
+    "type": "video",
+    "image_path": "/static/sign_images/afraid.jpg",
+    "image_count": 6,
+    "video_path": "/static/sign_videos/afraid.mp4"
+  },
+  "agree": {
+    "original_name": "agree",
+    "type": "video",
+    "image_path": "/static/sign_images/agree.jpg",
+    "image_count": 7,
+    "video_path": "/static/sign_videos/agree.mp4"
+  },
+  "all": {
+    "original_name": "all",
+    "type": "video",
+    "image_path": "/static/sign_images/all.jpg",
+    "image_count": 4,
+    "video_path": "/static/sign_videos/all.mp4"
+  },
+  "angry": {
+    "original_name": "angry",
+    "type": "video",
+    "image_path": "/static/sign_images/angry.jpg",
+    "image_count": 10,
+    "video_path": "/static/sign_videos/angry.mp4"
+  },
+  "anything": {
+    "original_name": "ANYTHING",
+    "type": "image",
+    "image_path": "/static/sign_images/anything.jpg",
+    "image_count": 4
+  },
+  "appreciate": {
+    "original_name": "APPRECIATE",
+    "type": "image",
+    "image_path": "/static/sign_images/appreciate.jpg",
+    "image_count": 5
+  },
+  "bad": {
+    "original_name": "bad",
+    "type": "video",
+    "image_path": "/static/sign_images/bad.jpg",
+    "image_count": 5,
+    "video_path": "/static/sign_videos/bad.mp4"
+  },
+  "beautiful": {
+    "original_name": "beautiful",
+    "type": "video",
+    "image_path": "/static/sign_images/beautiful.jpg",
+    "image_count": 5,
+    "video_path": "/static/sign_videos/beautiful.mp4"
+  },
+  "become": {
+    "original_name": "become",
+    "type": "video",
+    "image_path": "/static/sign_images/become.jpg",
+    "image_count": 5,
+    "video_path": "/static/sign_videos/become.mp4"
+  },
+  "bed": {
+    "original_name": "bed",
+    "type": "video",
+    "image_path": "/static/sign_images/bed.jpg",
+    "image_count": 7,
+    "video_path": "/static/sign_videos/bed.mp4"
+  },
+  "bored": {
+    "original_name": "bored",
+    "type": "video",
+    "image_path": "/static/sign_images/bored.jpg",
+    "image_count": 6,
+    "video_path": "/static/sign_videos/bored.mp4"
+  },
+  "bring": {
+    "original_name": "BRING",
+    "type": "image",
+    "image_path": "/static/sign_images/bring.jpg",
+    "image_count": 7
+  },
+  "chat": {
+    "original_name": "CHAT",
+    "type": "image",
+    "image_path": "/static/sign_images/chat.jpg",
+    "image_count": 6
+  },
+  "class": {
+    "original_name": "CLASS",
+    "type": "image",
+    "image_path": "/static/sign_images/class.jpg",
+    "image_count": 5
+  },
+  "cold": {
+    "original_name": "cold",
+    "type": "video",
+    "image_path": "/static/sign_images/cold.jpg",
+    "image_count": 7,
+    "video_path": "/static/sign_videos/cold.mp4"
+  },
+  "college_school": {
+    "original_name": "college school",
+    "type": "video",
+    "image_path": "/static/sign_images/college_school.jpg",
+    "image_count": 18,
+    "video_path": "/static/sign_videos/college_school.mp4"
+  },
+  "comb": {
+    "original_name": "comb",
+    "type": "video",
+    "image_path": "/static/sign_images/comb.jpg",
+    "image_count": 7,
+    "video_path": "/static/sign_videos/comb.mp4"
+  },
+  "come": {
+    "original_name": "COME",
+    "type": "image",
+    "image_path": "/static/sign_images/come.jpg",
+    "image_count": 6
+  },
+  "congratulations": {
+    "original_name": "congratulations",
+    "type": "video",
+    "image_path": "/static/sign_images/congratulations.jpg",
+    "image_count": 7,
+    "video_path": "/static/sign_videos/congratulations.mp4"
+  },
+  "crying": {
+    "original_name": "crying",
+    "type": "video",
+    "image_path": "/static/sign_images/crying.jpg",
+    "image_count": 13,
+    "video_path": "/static/sign_videos/crying.mp4"
+  },
+  "dare": {
+    "original_name": "dare",
+    "type": "video",
+    "image_path": "/static/sign_images/dare.jpg",
+    "image_count": 6,
+    "video_path": "/static/sign_videos/dare.mp4"
+  },
+  "difference": {
+    "original_name": "difference",
+    "type": "video",
+    "image_path": "/static/sign_images/difference.jpg",
+    "image_count": 5,
+    "video_path": "/static/sign_videos/difference.mp4"
+  },
+  "dilemma": {
+    "original_name": "dilemma",
+    "type": "video",
+    "image_path": "/static/sign_images/dilemma.jpg",
+    "image_count": 6,
+    "video_path": "/static/sign_videos/dilemma.mp4"
+  },
+  "disappointed": {
+    "original_name": "disappointed",
+    "type": "video",
+    "image_path": "/static/sign_images/disappointed.jpg",
+    "image_count": 6,
+    "video_path": "/static/sign_videos/disappointed.mp4"
+  },
+  "do": {
+    "original_name": "DO",
+    "type": "image",
+    "image_path": "/static/sign_images/do.jpg",
+    "image_count": 12
+  },
+  "don't_care": {
+    "original_name": "DON'T CARE",
+    "type": "image",
+    "image_path": "/static/sign_images/don't_care.jpg",
+    "image_count": 3
+  },
+  "enjoy": {
+    "original_name": "enjoy",
+    "type": "video",
+    "image_path": "/static/sign_images/enjoy.jpg",
+    "image_count": 4,
+    "video_path": "/static/sign_videos/enjoy.mp4"
+  },
+  "favour": {
+    "original_name": "favour",
+    "type": "video",
+    "image_path": "/static/sign_images/favour.jpg",
+    "image_count": 4,
+    "video_path": "/static/sign_videos/favour.mp4"
+  },
+  "fever": {
+    "original_name": "fever",
+    "type": "video",
+    "image_path": "/static/sign_images/fever.jpg",
+    "image_count": 7,
+    "video_path": "/static/sign_videos/fever.mp4"
+  },
+  "fine": {
+    "original_name": "FINE",
+    "type": "image",
+    "image_path": "/static/sign_images/fine.jpg",
+    "image_count": 6
+  },
+  "food": {
+    "original_name": "food",
+    "type": "video",
+    "image_path": "/static/sign_images/food.jpg",
+    "image_count": 23,
+    "video_path": "/static/sign_videos/food.mp4"
+  },
+  "free": {
+    "original_name": "free",
+    "type": "video",
+    "image_path": "/static/sign_images/free.jpg",
+    "image_count": 7,
+    "video_path": "/static/sign_videos/free.mp4"
+  },
+  "friend": {
+    "original_name": "friend",
+    "type": "video",
+    "image_path": "/static/sign_images/friend.jpg",
+    "image_count": 6,
+    "video_path": "/static/sign_videos/friend.mp4"
+  },
+  "from": {
+    "original_name": "FROM",
+    "type": "image",
+    "image_path": "/static/sign_images/from.jpg",
+    "image_count": 7
+  },
+  "go": {
+    "original_name": "GO",
+    "type": "image",
+    "image_path": "/static/sign_images/go.jpg",
+    "image_count": 9
+  },
+  "good": {
+    "original_name": "good",
+    "type": "video",
+    "image_path": "/static/sign_images/good.jpg",
+    "image_count": 7,
+    "video_path": "/static/sign_videos/good.mp4"
+  },
+  "grateful": {
+    "original_name": "GRATEFUL",
+    "type": "image",
+    "image_path": "/static/sign_images/grateful.jpg",
+    "image_count": 6
+  },
+  "had": {
+    "original_name": "HAD",
+    "type": "image",
+    "image_path": "/static/sign_images/had.jpg",
+    "image_count": 4
+  },
+  "happened": {
+    "original_name": "happened",
+    "type": "video",
+    "image_path": "/static/sign_images/happened.jpg",
+    "image_count": 5,
+    "video_path": "/static/sign_videos/happened.mp4"
+  },
+  "happy": {
+    "original_name": "HAPPY",
+    "type": "image",
+    "image_path": "/static/sign_images/happy.jpg",
+    "image_count": 5
+  },
+  "hear": {
+    "original_name": "HEAR",
+    "type": "image",
+    "image_path": "/static/sign_images/hear.jpg",
+    "image_count": 7
+  },
+  "heart": {
+    "original_name": "heart",
+    "type": "video",
+    "image_path": "/static/sign_images/heart.jpg",
+    "image_count": 6,
+    "video_path": "/static/sign_videos/heart.mp4"
+  },
+  "hello_hi": {
+    "original_name": "HELLO HI",
+    "type": "image",
+    "image_path": "/static/sign_images/hello_hi.jpg",
+    "image_count": 4
+  },
+  "help": {
+    "original_name": "help",
+    "type": "video",
+    "image_path": "/static/sign_images/help.jpg",
+    "image_count": 26,
+    "video_path": "/static/sign_videos/help.mp4"
+  },
+  "hiding": {
+    "original_name": "HIDING",
+    "type": "image",
+    "image_path": "/static/sign_images/hiding.jpg",
+    "image_count": 6
+  },
+  "how": {
+    "original_name": "HOW",
+    "type": "image",
+    "image_path": "/static/sign_images/how.jpg",
+    "image_count": 20
+  },
+  "hungry": {
+    "original_name": "HUNGRY",
+    "type": "image",
+    "image_path": "/static/sign_images/hungry.jpg",
+    "image_count": 7
+  },
+  "hurt": {
+    "original_name": "hurt",
+    "type": "video",
+    "image_path": "/static/sign_images/hurt.jpg",
+    "image_count": 14,
+    "video_path": "/static/sign_videos/hurt.mp4"
+  },
+  "i_me_mine_my": {
+    "original_name": "I ME MINE MY",
+    "type": "image",
+    "image_path": "/static/sign_images/i_me_mine_my.jpg",
+    "image_count": 97
+  },
+  "kind": {
+    "original_name": "KIND",
+    "type": "image",
+    "image_path": "/static/sign_images/kind.jpg",
+    "image_count": 7
+  },
+  "leave": {
+    "original_name": "leave",
+    "type": "video",
+    "image_path": "/static/sign_images/leave.jpg",
+    "image_count": 5,
+    "video_path": "/static/sign_videos/leave.mp4"
+  },
+  "like": {
+    "original_name": "LIKE",
+    "type": "image",
+    "image_path": "/static/sign_images/like.jpg",
+    "image_count": 6
+  },
+  "like_love": {
+    "original_name": "LIKE LOVE",
+    "type": "image",
+    "image_path": "/static/sign_images/like_love.jpg",
+    "image_count": 7
+  },
+  "mean_it": {
+    "original_name": "MEAN IT",
+    "type": "image",
+    "image_path": "/static/sign_images/mean_it.jpg",
+    "image_count": 3
+  },
+  "medicine": {
+    "original_name": "medicine",
+    "type": "video",
+    "image_path": "/static/sign_images/medicine.jpg",
+    "image_count": 6,
+    "video_path": "/static/sign_videos/medicine.mp4"
+  },
+  "meet": {
+    "original_name": "MEET",
+    "type": "image",
+    "image_path": "/static/sign_images/meet.jpg",
+    "image_count": 5
+  },
+  "name": {
+    "original_name": "NAME",
+    "type": "image",
+    "image_path": "/static/sign_images/name.jpg",
+    "image_count": 7
+  },
+  "nice": {
+    "original_name": "NICE",
+    "type": "image",
+    "image_path": "/static/sign_images/nice.jpg",
+    "image_count": 15
+  },
+  "not": {
+    "original_name": "NOT",
+    "type": "image",
+    "image_path": "/static/sign_images/not.jpg",
+    "image_count": 16
+  },
+  "number": {
+    "original_name": "NUMBER",
+    "type": "image",
+    "image_path": "/static/sign_images/number.jpg",
+    "image_count": 8
+  },
+  "old_age": {
+    "original_name": "OLD AGE",
+    "type": "image",
+    "image_path": "/static/sign_images/old_age.jpg",
+    "image_count": 12
+  },
+  "on_the_way": {
+    "original_name": "ON THE WAY",
+    "type": "image",
+    "image_path": "/static/sign_images/on_the_way.jpg",
+    "image_count": 3
+  },
+  "outside": {
+    "original_name": "outside",
+    "type": "video",
+    "image_path": "/static/sign_images/outside.jpg",
+    "image_count": 6,
+    "video_path": "/static/sign_videos/outside.mp4"
+  },
+  "phone": {
+    "original_name": "PHONE",
+    "type": "image",
+    "image_path": "/static/sign_images/phone.jpg",
+    "image_count": 7
+  },
+  "place": {
+    "original_name": "PLACE",
+    "type": "image",
+    "image_path": "/static/sign_images/place.jpg",
+    "image_count": 4
+  },
+  "please": {
+    "original_name": "PLEASE",
+    "type": "image",
+    "image_path": "/static/sign_images/please.jpg",
+    "image_count": 2
+  },
+  "pour": {
+    "original_name": "pour",
+    "type": "video",
+    "image_path": "/static/sign_images/pour.jpg",
+    "image_count": 7,
+    "video_path": "/static/sign_videos/pour.mp4"
+  },
+  "prepare": {
+    "original_name": "PREPARE",
+    "type": "image",
+    "image_path": "/static/sign_images/prepare.jpg",
+    "image_count": 6
+  },
+  "promise": {
+    "original_name": "promise",
+    "type": "video",
+    "image_path": "/static/sign_images/promise.jpg",
+    "image_count": 7,
+    "video_path": "/static/sign_videos/promise.mp4"
+  },
+  "really": {
+    "original_name": "REALLY",
+    "type": "image",
+    "image_path": "/static/sign_images/really.jpg",
+    "image_count": 12
+  },
+  "repeat": {
+    "original_name": "REPEAT",
+    "type": "image",
+    "image_path": "/static/sign_images/repeat.jpg",
+    "image_count": 6
+  },
+  "room": {
+    "original_name": "room",
+    "type": "video",
+    "image_path": "/static/sign_images/room.jpg",
+    "image_count": 8,
+    "video_path": "/static/sign_videos/room.mp4"
+  },
+  "serve": {
+    "original_name": "serve",
+    "type": "video",
+    "image_path": "/static/sign_images/serve.jpg",
+    "image_count": 7,
+    "video_path": "/static/sign_videos/serve.mp4"
+  },
+  "shirt": {
+    "original_name": "shirt",
+    "type": "video",
+    "image_path": "/static/sign_images/shirt.jpg",
+    "image_count": 7,
+    "video_path": "/static/sign_videos/shirt.mp4"
+  },
+  "sitting": {
+    "original_name": "sitting",
+    "type": "video",
+    "image_path": "/static/sign_images/sitting.jpg",
+    "image_count": 5,
+    "video_path": "/static/sign_videos/sitting.mp4"
+  },
+  "sleep": {
+    "original_name": "sleep",
+    "type": "video",
+    "image_path": "/static/sign_images/sleep.jpg",
+    "image_count": 5,
+    "video_path": "/static/sign_videos/sleep.mp4"
+  },
+  "slower": {
+    "original_name": "SLOWER",
+    "type": "image",
+    "image_path": "/static/sign_images/slower.jpg",
+    "image_count": 5
+  },
+  "so_much": {
+    "original_name": "SO MUCH",
+    "type": "image",
+    "image_path": "/static/sign_images/so_much.jpg",
+    "image_count": 7
+  },
+  "softly": {
+    "original_name": "softly",
+    "type": "video",
+    "image_path": "/static/sign_images/softly.jpg",
+    "image_count": 5,
+    "video_path": "/static/sign_videos/softly.mp4"
+  },
+  "some_how": {
+    "original_name": "SOME HOW",
+    "type": "image",
+    "image_path": "/static/sign_images/some_how.jpg",
+    "image_count": 7
+  },
+  "some_one": {
+    "original_name": "SOME ONE",
+    "type": "image",
+    "image_path": "/static/sign_images/some_one.jpg",
+    "image_count": 10
+  },
+  "something": {
+    "original_name": "something",
+    "type": "video",
+    "image_path": "/static/sign_images/something.jpg",
+    "image_count": 3,
+    "video_path": "/static/sign_videos/something.mp4"
+  },
+  "sorry": {
+    "original_name": "SORRY",
+    "type": "image",
+    "image_path": "/static/sign_images/sorry.jpg",
+    "image_count": 6
+  },
+  "speak": {
+    "original_name": "SPEAK",
+    "type": "image",
+    "image_path": "/static/sign_images/speak.jpg",
+    "image_count": 5
+  },
+  "stop": {
+    "original_name": "STOP",
+    "type": "image",
+    "image_path": "/static/sign_images/stop.jpg",
+    "image_count": 6
+  },
+  "stubborn": {
+    "original_name": "stubborn",
+    "type": "video",
+    "image_path": "/static/sign_images/stubborn.jpg",
+    "image_count": 5,
+    "video_path": "/static/sign_videos/stubborn.mp4"
+  },
+  "sure": {
+    "original_name": "SURE",
+    "type": "image",
+    "image_path": "/static/sign_images/sure.jpg",
+    "image_count": 6
+  },
+  "take_care": {
+    "original_name": "Take care",
+    "type": "video",
+    "image_path": "/static/sign_images/take_care.jpg",
+    "image_count": 8,
+    "video_path": "/static/sign_videos/take_care.mp4"
+  },
+  "take_time": {
+    "original_name": "TAKE TIME",
+    "type": "image",
+    "image_path": "/static/sign_images/take_time.jpg",
+    "image_count": 7
+  },
+  "talk": {
+    "original_name": "TALK",
+    "type": "image",
+    "image_path": "/static/sign_images/talk.jpg",
+    "image_count": 7
+  },
+  "tell": {
+    "original_name": "TELL",
+    "type": "image",
+    "image_path": "/static/sign_images/tell.jpg",
+    "image_count": 9
+  },
+  "thank": {
+    "original_name": "THANK",
+    "type": "image",
+    "image_path": "/static/sign_images/thank.jpg",
+    "image_count": 14
+  },
+  "that": {
+    "original_name": "THAT",
+    "type": "image",
+    "image_path": "/static/sign_images/that.jpg",
+    "image_count": 12
+  },
+  "things": {
+    "original_name": "things",
+    "type": "video",
+    "image_path": "/static/sign_images/things.jpg",
+    "image_count": 3,
+    "video_path": "/static/sign_videos/things.mp4"
+  },
+  "think": {
+    "original_name": "THINK",
+    "type": "image",
+    "image_path": "/static/sign_images/think.jpg",
+    "image_count": 7
+  },
+  "thirsty": {
+    "original_name": "THIRSTY",
+    "type": "image",
+    "image_path": "/static/sign_images/thirsty.jpg",
+    "image_count": 7
+  },
+  "tired": {
+    "original_name": "tired",
+    "type": "video",
+    "image_path": "/static/sign_images/tired.jpg",
+    "image_count": 6,
+    "video_path": "/static/sign_videos/tired.mp4"
+  },
+  "today": {
+    "original_name": "today",
+    "type": "video",
+    "image_path": "/static/sign_images/today.jpg",
+    "image_count": 7,
+    "video_path": "/static/sign_videos/today.mp4"
+  },
+  "train": {
+    "original_name": "train",
+    "type": "video",
+    "image_path": "/static/sign_images/train.jpg",
+    "image_count": 5,
+    "video_path": "/static/sign_videos/train.mp4"
+  },
+  "trust": {
+    "original_name": "trust",
+    "type": "video",
+    "image_path": "/static/sign_images/trust.jpg",
+    "image_count": 4,
+    "video_path": "/static/sign_videos/trust.mp4"
+  },
+  "truth": {
+    "original_name": "truth",
+    "type": "video",
+    "image_path": "/static/sign_images/truth.jpg",
+    "image_count": 4,
+    "video_path": "/static/sign_videos/truth.mp4"
+  },
+  "turn_on": {
+    "original_name": "turn on",
+    "type": "video",
+    "image_path": "/static/sign_images/turn_on.jpg",
+    "image_count": 6,
+    "video_path": "/static/sign_videos/turn_on.mp4"
+  },
+  "understand": {
+    "original_name": "understand",
+    "type": "video",
+    "image_path": "/static/sign_images/understand.jpg",
+    "image_count": 5,
+    "video_path": "/static/sign_videos/understand.mp4"
+  },
+  "want": {
+    "original_name": "WANT",
+    "type": "image",
+    "image_path": "/static/sign_images/want.jpg",
+    "image_count": 5
+  },
+  "water": {
+    "original_name": "WATER",
+    "type": "image",
+    "image_path": "/static/sign_images/water.jpg",
+    "image_count": 21
+  },
+  "wear": {
+    "original_name": "WEAR",
+    "type": "image",
+    "image_path": "/static/sign_images/wear.jpg",
+    "image_count": 7
+  },
+  "welcome": {
+    "original_name": "welcome",
+    "type": "video",
+    "image_path": "/static/sign_images/welcome.jpg",
+    "image_count": 5,
+    "video_path": "/static/sign_videos/welcome.mp4"
+  },
+  "what": {
+    "original_name": "WHAT",
+    "type": "image",
+    "image_path": "/static/sign_images/what.jpg",
+    "image_count": 31
+  },
+  "where": {
+    "original_name": "WHERE",
+    "type": "image",
+    "image_path": "/static/sign_images/where.jpg",
+    "image_count": 7
+  },
+  "who": {
+    "original_name": "WHO",
+    "type": "image",
+    "image_path": "/static/sign_images/who.jpg",
+    "image_count": 7
+  },
+  "worry": {
+    "original_name": "worry",
+    "type": "video",
+    "image_path": "/static/sign_images/worry.jpg",
+    "image_count": 4,
+    "video_path": "/static/sign_videos/worry.mp4"
+  },
+  "you": {
+    "original_name": "YOU",
+    "type": "image",
+    "image_path": "/static/sign_images/you.jpg",
+    "image_count": 110
+  },
+  "he_is_going_into_the_room": {
+    "original_name": "he is going into the room",
+    "type": "video",
+    "video_path": "/static/sign_videos/he_is_going_into_the_room.mp4"
+  },
+  "mvi_6503": {
+    "original_name": "MVI 6503",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6503.mp4"
+  },
+  "mvi_6496": {
+    "original_name": "MVI 6496",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6496.mp4"
+  },
+  "mvi_6502": {
+    "original_name": "MVI 6502",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6502.mp4"
+  },
+  "this_place_is_beautiful": {
+    "original_name": "this place is beautiful",
+    "type": "video",
+    "video_path": "/static/sign_videos/this_place_is_beautiful.mp4"
+  },
+  "are_you_free_today": {
+    "original_name": "are you free today",
+    "type": "video",
+    "video_path": "/static/sign_videos/are_you_free_today.mp4"
+  },
+  "are_you_hiding_something": {
+    "original_name": "are you hiding something",
+    "type": "video",
+    "video_path": "/static/sign_videos/are_you_hiding_something.mp4"
+  },
+  "mvi_6209": {
+    "original_name": "MVI 6209",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6209.mp4"
+  },
+  "mvi_6507": {
+    "original_name": "MVI 6507",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6507.mp4"
+  },
+  "mvi_6685": {
+    "original_name": "MVI 6685",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6685.mp4"
+  },
+  "mvi_6817": {
+    "original_name": "MVI 6817",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6817.mp4"
+  },
+  "mvi_6958": {
+    "original_name": "MVI 6958",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6958.mp4"
+  },
+  "bring_water_for_me": {
+    "original_name": "bring water for me",
+    "type": "video",
+    "video_path": "/static/sign_videos/bring_water_for_me.mp4"
+  },
+  "can_i_help_you": {
+    "original_name": "can i help you",
+    "type": "video",
+    "video_path": "/static/sign_videos/can_i_help_you.mp4"
+  },
+  "cannot_help": {
+    "original_name": "cannot help",
+    "type": "video",
+    "video_path": "/static/sign_videos/cannot_help.mp4"
+  },
+  "can_you_repeat_that_please": {
+    "original_name": "can you repeat that please",
+    "type": "video",
+    "video_path": "/static/sign_videos/can_you_repeat_that_please.mp4"
+  },
+  "comb_your_hair": {
+    "original_name": "comb your hair",
+    "type": "video",
+    "video_path": "/static/sign_videos/comb_your_hair.mp4"
+  },
+  "could_you_please_talk_slower": {
+    "original_name": "could you please talk slower",
+    "type": "video",
+    "video_path": "/static/sign_videos/could_you_please_talk_slower.mp4"
+  },
+  "do_me_a_favour": {
+    "original_name": "do me a favour",
+    "type": "video",
+    "video_path": "/static/sign_videos/do_me_a_favour.mp4"
+  },
+  "do_not_abuse_him": {
+    "original_name": "do not abuse him",
+    "type": "video",
+    "video_path": "/static/sign_videos/do_not_abuse_him.mp4"
+  },
+  "do_not_be_stubborn": {
+    "original_name": "do not be stubborn",
+    "type": "video",
+    "video_path": "/static/sign_videos/do_not_be_stubborn.mp4"
+  },
+  "do_not_hurt_me": {
+    "original_name": "do not hurt me",
+    "type": "video",
+    "video_path": "/static/sign_videos/do_not_hurt_me.mp4"
+  },
+  "hurt_me": {
+    "original_name": "hurt me",
+    "type": "video",
+    "video_path": "/static/sign_videos/hurt_me.mp4"
+  },
+  "do_not_make_me_angry": {
+    "original_name": "do not make me angry",
+    "type": "video",
+    "video_path": "/static/sign_videos/do_not_make_me_angry.mp4"
+  },
+  "me_angry": {
+    "original_name": "me angry",
+    "type": "video",
+    "video_path": "/static/sign_videos/me_angry.mp4"
+  },
+  "do_not_take_it_to_the_heart": {
+    "original_name": "do not take it to the heart",
+    "type": "video",
+    "video_path": "/static/sign_videos/do_not_take_it_to_the_heart.mp4"
+  },
+  "do_not_worry": {
+    "original_name": "do not worry",
+    "type": "video",
+    "video_path": "/static/sign_videos/do_not_worry.mp4"
+  },
+  "mvi_6633": {
+    "original_name": "MVI 6633",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6633.mp4"
+  },
+  "do_you_need_something": {
+    "original_name": "do you need something",
+    "type": "video",
+    "video_path": "/static/sign_videos/do_you_need_something.mp4"
+  },
+  "need_something": {
+    "original_name": "need something",
+    "type": "video",
+    "video_path": "/static/sign_videos/need_something.mp4"
+  },
+  "go_and_sleep": {
+    "original_name": "go and sleep",
+    "type": "video",
+    "video_path": "/static/sign_videos/go_and_sleep.mp4"
+  },
+  "had_your_food": {
+    "original_name": "had your food",
+    "type": "video",
+    "video_path": "/static/sign_videos/had_your_food.mp4"
+  },
+  "he_came_by_train": {
+    "original_name": "he came by train",
+    "type": "video",
+    "video_path": "/static/sign_videos/he_came_by_train.mp4"
+  },
+  "he_is_on_the_way": {
+    "original_name": "he is on the way",
+    "type": "video",
+    "video_path": "/static/sign_videos/he_is_on_the_way.mp4"
+  },
+  "way": {
+    "original_name": "way",
+    "type": "video",
+    "video_path": "/static/sign_videos/way.mp4"
+  },
+  "heshe_is_my_friend": {
+    "original_name": "heshe is my friend",
+    "type": "video",
+    "video_path": "/static/sign_videos/heshe_is_my_friend.mp4"
+  },
+  "mvi_6500": {
+    "original_name": "MVI 6500",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6500.mp4"
+  },
+  "she_is_my_friend": {
+    "original_name": "she is my friend",
+    "type": "video",
+    "video_path": "/static/sign_videos/she_is_my_friend.mp4"
+  },
+  "he_would_be_coming_today": {
+    "original_name": "he would be coming today",
+    "type": "video",
+    "video_path": "/static/sign_videos/he_would_be_coming_today.mp4"
+  },
+  "help_me": {
+    "original_name": "help me",
+    "type": "video",
+    "video_path": "/static/sign_videos/help_me.mp4"
+  },
+  "hi_how_are_you": {
+    "original_name": "hi how are you",
+    "type": "video",
+    "video_path": "/static/sign_videos/hi_how_are_you.mp4"
+  },
+  "how_are_things": {
+    "original_name": "how are things",
+    "type": "video",
+    "video_path": "/static/sign_videos/how_are_things.mp4"
+  },
+  "how_can_i_help_you": {
+    "original_name": "how can i help you",
+    "type": "video",
+    "video_path": "/static/sign_videos/how_can_i_help_you.mp4"
+  },
+  "how_can_i_trust_you": {
+    "original_name": "how can i trust you",
+    "type": "video",
+    "video_path": "/static/sign_videos/how_can_i_trust_you.mp4"
+  },
+  "how_dare_you": {
+    "original_name": "how dare you",
+    "type": "video",
+    "video_path": "/static/sign_videos/how_dare_you.mp4"
+  },
+  "how_old_are_you": {
+    "original_name": "how old are you",
+    "type": "video",
+    "video_path": "/static/sign_videos/how_old_are_you.mp4"
+  },
+  "i_am": {
+    "original_name": "i am",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_am.mp4"
+  },
+  "i_am_afraid_of_that": {
+    "original_name": "i am afraid of that",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_am_afraid_of_that.mp4"
+  },
+  "i_am_crying": {
+    "original_name": "i am crying",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_am_crying.mp4"
+  },
+  "i_am_feeling_bored": {
+    "original_name": "i am feeling bored",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_am_feeling_bored.mp4"
+  },
+  "i_am_feeling_cold": {
+    "original_name": "i am feeling cold",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_am_feeling_cold.mp4"
+  },
+  "fine_thank": {
+    "original_name": "fine thank",
+    "type": "video",
+    "video_path": "/static/sign_videos/fine_thank.mp4"
+  },
+  "i_am_fine._thank_you_sir": {
+    "original_name": "i am fine. thank you sir",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_am_fine._thank_you_sir.mp4"
+  },
+  "i_am_hungry": {
+    "original_name": "i am hungry",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_am_hungry.mp4"
+  },
+  "i_am_in_dilemma_what_to_do": {
+    "original_name": "i am in dilemma what to do",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_am_in_dilemma_what_to_do.mp4"
+  },
+  "i_am_not_really_sure": {
+    "original_name": "i am not really sure",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_am_not_really_sure.mp4"
+  },
+  "mvi_6546": {
+    "original_name": "MVI 6546",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6546.mp4"
+  },
+  "really_sure": {
+    "original_name": "really sure",
+    "type": "video",
+    "video_path": "/static/sign_videos/really_sure.mp4"
+  },
+  "i_am_really_grateful": {
+    "original_name": "i am really grateful",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_am_really_grateful.mp4"
+  },
+  "mvi_6104": {
+    "original_name": "MVI 6104",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6104.mp4"
+  },
+  "mvi_6395": {
+    "original_name": "MVI 6395",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6395.mp4"
+  },
+  "mvi_6539": {
+    "original_name": "MVI 6539",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6539.mp4"
+  },
+  "mvi_6721": {
+    "original_name": "MVI 6721",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6721.mp4"
+  },
+  "mvi_6849": {
+    "original_name": "MVI 6849",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6849.mp4"
+  },
+  "i_am_sitting_in_the_class": {
+    "original_name": "i am sitting in the class",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_am_sitting_in_the_class.mp4"
+  },
+  "i_am_so_sorry_to_hear_that": {
+    "original_name": "i am so sorry to hear that",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_am_so_sorry_to_hear_that.mp4"
+  },
+  "sorry_hear": {
+    "original_name": "sorry hear",
+    "type": "video",
+    "video_path": "/static/sign_videos/sorry_hear.mp4"
+  },
+  "i_am_suffering_from_fever": {
+    "original_name": "i am suffering from fever",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_am_suffering_from_fever.mp4"
+  },
+  "i_am_tired": {
+    "original_name": "i am tired",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_am_tired.mp4"
+  },
+  "i_am_very_happy": {
+    "original_name": "i am very happy",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_am_very_happy.mp4"
+  },
+  "very_happy": {
+    "original_name": "very happy",
+    "type": "video",
+    "video_path": "/static/sign_videos/very_happy.mp4"
+  },
+  "i_can_not_help_you_there": {
+    "original_name": "i can not help you there",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_can_not_help_you_there.mp4"
+  },
+  "mvi_6109": {
+    "original_name": "MVI 6109",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6109.mp4"
+  },
+  "mvi_6399": {
+    "original_name": "MVI 6399",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6399.mp4"
+  },
+  "mvi_6545": {
+    "original_name": "MVI 6545",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6545.mp4"
+  },
+  "mvi_6725": {
+    "original_name": "MVI 6725",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6725.mp4"
+  },
+  "mvi_6854": {
+    "original_name": "MVI 6854",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6854.mp4"
+  },
+  "i_do_not_agree": {
+    "original_name": "i do not agree",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_do_not_agree.mp4"
+  },
+  "hate": {
+    "original_name": "hate",
+    "type": "video",
+    "video_path": "/static/sign_videos/hate.mp4"
+  },
+  "hate_it": {
+    "original_name": "hate it",
+    "type": "video",
+    "video_path": "/static/sign_videos/hate_it.mp4"
+  },
+  "i_do_not_like_it": {
+    "original_name": "i do not like it",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_do_not_like_it.mp4"
+  },
+  "i_do_not_mean_it": {
+    "original_name": "i do not mean it",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_do_not_mean_it.mp4"
+  },
+  "mean": {
+    "original_name": "mean",
+    "type": "video",
+    "video_path": "/static/sign_videos/mean.mp4"
+  },
+  "mvi_6494": {
+    "original_name": "MVI 6494",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6494.mp4"
+  },
+  "enjoyed": {
+    "original_name": "enjoyed",
+    "type": "video",
+    "video_path": "/static/sign_videos/enjoyed.mp4"
+  },
+  "i_enjoyed_a_lot": {
+    "original_name": "i enjoyed a lot",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_enjoyed_a_lot.mp4"
+  },
+  "got_hurt": {
+    "original_name": "got hurt",
+    "type": "video",
+    "video_path": "/static/sign_videos/got_hurt.mp4"
+  },
+  "i_got_hurt": {
+    "original_name": "i got hurt",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_got_hurt.mp4"
+  },
+  "i_love_you": {
+    "original_name": "i love you",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_love_you.mp4"
+  },
+  "love": {
+    "original_name": "love",
+    "type": "video",
+    "video_path": "/static/sign_videos/love.mp4"
+  },
+  "mvi_6207": {
+    "original_name": "MVI 6207",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6207.mp4"
+  },
+  "mvi_6505": {
+    "original_name": "MVI 6505",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6505.mp4"
+  },
+  "mvi_6682": {
+    "original_name": "MVI 6682",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6682.mp4"
+  },
+  "mvi_6814": {
+    "original_name": "MVI 6814",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6814.mp4"
+  },
+  "mvi_6956": {
+    "original_name": "MVI 6956",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6956.mp4"
+  },
+  "i_need_water_1": {
+    "original_name": "i need water 1",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_need_water_1.mp4"
+  },
+  "i_need_water_2": {
+    "original_name": "i need water 2",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_need_water_2.mp4"
+  },
+  "i_need_water_3": {
+    "original_name": "i need water 3",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_need_water_3.mp4"
+  },
+  "i_need_water_4": {
+    "original_name": "i need water 4",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_need_water_4.mp4"
+  },
+  "i_need_water_5": {
+    "original_name": "i need water 5",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_need_water_5.mp4"
+  },
+  "i_need_water_6": {
+    "original_name": "i need water 6",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_need_water_6.mp4"
+  },
+  "i_need_water_7": {
+    "original_name": "i need water 7",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_need_water_7.mp4"
+  },
+  "i_promise": {
+    "original_name": "i promise",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_promise.mp4"
+  },
+  "i_really_appreciate_it": {
+    "original_name": "i really appreciate it",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_really_appreciate_it.mp4"
+  },
+  "i_somehow_got_to_know_about_it.": {
+    "original_name": "i somehow got to know about it.",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_somehow_got_to_know_about_it..mp4"
+  },
+  "i_somehow_got_to_know_about_it": {
+    "original_name": "i somehow got to know about it",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_somehow_got_to_know_about_it.mp4"
+  },
+  "somehow": {
+    "original_name": "somehow",
+    "type": "video",
+    "video_path": "/static/sign_videos/somehow.mp4"
+  },
+  "i_was_stopped_by_someone": {
+    "original_name": "i was stopped by someone",
+    "type": "video",
+    "video_path": "/static/sign_videos/i_was_stopped_by_someone.mp4"
+  },
+  "mvi_6504": {
+    "original_name": "MVI 6504",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6504.mp4"
+  },
+  "mvi_6955": {
+    "original_name": "MVI 6955",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6955.mp4"
+  },
+  "stopped": {
+    "original_name": "stopped",
+    "type": "video",
+    "video_path": "/static/sign_videos/stopped.mp4"
+  },
+  "it_does_not_make_any_difference_to_me": {
+    "original_name": "it does not make any difference to me",
+    "type": "video",
+    "video_path": "/static/sign_videos/it_does_not_make_any_difference_to_me.mp4"
+  },
+  "it_was_nice_chatting_with_you": {
+    "original_name": "it was nice chatting with you",
+    "type": "video",
+    "video_path": "/static/sign_videos/it_was_nice_chatting_with_you.mp4"
+  },
+  "mvi_6107": {
+    "original_name": "MVI 6107",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6107.mp4"
+  },
+  "mvi_6398": {
+    "original_name": "MVI 6398",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6398.mp4"
+  },
+  "mvi_6542": {
+    "original_name": "MVI 6542",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6542.mp4"
+  },
+  "mvi_6724": {
+    "original_name": "MVI 6724",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6724.mp4"
+  },
+  "mvi_6853": {
+    "original_name": "MVI 6853",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6853.mp4"
+  },
+  "let_him_take_time": {
+    "original_name": "let him take time",
+    "type": "video",
+    "video_path": "/static/sign_videos/let_him_take_time.mp4"
+  },
+  "time": {
+    "original_name": "time",
+    "type": "video",
+    "video_path": "/static/sign_videos/time.mp4"
+  },
+  "my_name_is_xxxxxxxx": {
+    "original_name": "my name is xxxxxxxx",
+    "type": "video",
+    "video_path": "/static/sign_videos/my_name_is_xxxxxxxx.mp4"
+  },
+  "nice_to_meet_you": {
+    "original_name": "nice to meet you",
+    "type": "video",
+    "video_path": "/static/sign_videos/nice_to_meet_you.mp4"
+  },
+  "never_hurt": {
+    "original_name": "never hurt",
+    "type": "video",
+    "video_path": "/static/sign_videos/never_hurt.mp4"
+  },
+  "now_onwards_he_will_never_hurt_you": {
+    "original_name": "now onwards he will never hurt you",
+    "type": "video",
+    "video_path": "/static/sign_videos/now_onwards_he_will_never_hurt_you.mp4"
+  },
+  "pour_some_more_water_into_the_glass": {
+    "original_name": "pour some more water into the glass",
+    "type": "video",
+    "video_path": "/static/sign_videos/pour_some_more_water_into_the_glass.mp4"
+  },
+  "prepare_the_bed": {
+    "original_name": "prepare the bed",
+    "type": "video",
+    "video_path": "/static/sign_videos/prepare_the_bed.mp4"
+  },
+  "serve_1": {
+    "original_name": "serve 1",
+    "type": "video",
+    "video_path": "/static/sign_videos/serve_1.mp4"
+  },
+  "serve_food": {
+    "original_name": "serve food",
+    "type": "video",
+    "video_path": "/static/sign_videos/serve_food.mp4"
+  },
+  "serve_the_food": {
+    "original_name": "serve the food",
+    "type": "video",
+    "video_path": "/static/sign_videos/serve_the_food.mp4"
+  },
+  "mvi_6498": {
+    "original_name": "MVI 6498",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6498.mp4"
+  },
+  "shall_we_go_outside": {
+    "original_name": "shall we go outside",
+    "type": "video",
+    "video_path": "/static/sign_videos/shall_we_go_outside.mp4"
+  },
+  "softly_1": {
+    "original_name": "softly 1",
+    "type": "video",
+    "video_path": "/static/sign_videos/softly_1.mp4"
+  },
+  "speak_softly": {
+    "original_name": "speak softly",
+    "type": "video",
+    "video_path": "/static/sign_videos/speak_softly.mp4"
+  },
+  "take_care_of_yourself": {
+    "original_name": "take care of yourself",
+    "type": "video",
+    "video_path": "/static/sign_videos/take_care_of_yourself.mp4"
+  },
+  "tell_me_truth": {
+    "original_name": "tell me truth",
+    "type": "video",
+    "video_path": "/static/sign_videos/tell_me_truth.mp4"
+  },
+  "thank_you_so_much": {
+    "original_name": "thank you so much",
+    "type": "video",
+    "video_path": "/static/sign_videos/thank_you_so_much.mp4"
+  },
+  "mvi_6106": {
+    "original_name": "MVI 6106",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6106.mp4"
+  },
+  "mvi_6396": {
+    "original_name": "MVI 6396",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6396.mp4"
+  },
+  "mvi_6540": {
+    "original_name": "MVI 6540",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6540.mp4"
+  },
+  "mvi_6722": {
+    "original_name": "MVI 6722",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6722.mp4"
+  },
+  "mvi_6850": {
+    "original_name": "MVI 6850",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6850.mp4"
+  },
+  "that_is_so_kind_of_you": {
+    "original_name": "that is so kind of you",
+    "type": "video",
+    "video_path": "/static/sign_videos/that_is_so_kind_of_you.mp4"
+  },
+  "try_to_understand": {
+    "original_name": "try to understand",
+    "type": "video",
+    "video_path": "/static/sign_videos/try_to_understand.mp4"
+  },
+  "turn_on_light_turn_off_light": {
+    "original_name": "turn on light turn off light",
+    "type": "video",
+    "video_path": "/static/sign_videos/turn_on_light_turn_off_light.mp4"
+  },
+  "turn_on_lightturn_off_light": {
+    "original_name": "turn on lightturn off light",
+    "type": "video",
+    "video_path": "/static/sign_videos/turn_on_lightturn_off_light.mp4"
+  },
+  "mvi_6208": {
+    "original_name": "MVI 6208",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6208.mp4"
+  },
+  "mvi_6506": {
+    "original_name": "MVI 6506",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6506.mp4"
+  },
+  "mvi_6684": {
+    "original_name": "MVI 6684",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6684.mp4"
+  },
+  "mvi_6957": {
+    "original_name": "MVI 6957",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6957.mp4"
+  },
+  "we_are_all_with_you": {
+    "original_name": "we are all with you",
+    "type": "video",
+    "video_path": "/static/sign_videos/we_are_all_with_you.mp4"
+  },
+  "wear_the_shirt": {
+    "original_name": "wear the shirt",
+    "type": "video",
+    "video_path": "/static/sign_videos/wear_the_shirt.mp4"
+  },
+  "what_are_you_doing": {
+    "original_name": "what are you doing",
+    "type": "video",
+    "video_path": "/static/sign_videos/what_are_you_doing.mp4"
+  },
+  "mvi_6497": {
+    "original_name": "MVI 6497",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6497.mp4"
+  },
+  "tell_him": {
+    "original_name": "tell him",
+    "type": "video",
+    "video_path": "/static/sign_videos/tell_him.mp4"
+  },
+  "what_did_you_tell_him": {
+    "original_name": "what did you tell him",
+    "type": "video",
+    "video_path": "/static/sign_videos/what_did_you_tell_him.mp4"
+  },
+  "what_do_you_do": {
+    "original_name": "what do you do",
+    "type": "video",
+    "video_path": "/static/sign_videos/what_do_you_do.mp4"
+  },
+  "what_do_you_think": {
+    "original_name": "what do you think",
+    "type": "video",
+    "video_path": "/static/sign_videos/what_do_you_think.mp4"
+  },
+  "what_do_you_want_to_become": {
+    "original_name": "what do you want to become",
+    "type": "video",
+    "video_path": "/static/sign_videos/what_do_you_want_to_become.mp4"
+  },
+  "happen": {
+    "original_name": "happen",
+    "type": "video",
+    "video_path": "/static/sign_videos/happen.mp4"
+  },
+  "mvi_6495": {
+    "original_name": "MVI 6495",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6495.mp4"
+  },
+  "what_happened": {
+    "original_name": "what happened",
+    "type": "video",
+    "video_path": "/static/sign_videos/what_happened.mp4"
+  },
+  "mvi_6499": {
+    "original_name": "MVI 6499",
+    "type": "video",
+    "video_path": "/static/sign_videos/mvi_6499.mp4"
+  },
+  "what_have_you_planned_for_your_career": {
+    "original_name": "what have you planned for your career",
+    "type": "video",
+    "video_path": "/static/sign_videos/what_have_you_planned_for_your_career.mp4"
+  },
+  "what_is_your_phone_number": {
+    "original_name": "what is your phone number",
+    "type": "video",
+    "video_path": "/static/sign_videos/what_is_your_phone_number.mp4"
+  },
+  "what_you_want": {
+    "original_name": "what you want",
+    "type": "video",
+    "video_path": "/static/sign_videos/what_you_want.mp4"
+  },
+  "when_will_the_train_leave": {
+    "original_name": "when will the train leave",
+    "type": "video",
+    "video_path": "/static/sign_videos/when_will_the_train_leave.mp4"
+  },
+  "where_are_you_from": {
+    "original_name": "where are you from",
+    "type": "video",
+    "video_path": "/static/sign_videos/where_are_you_from.mp4"
+  },
+  "school_college": {
+    "original_name": "school college",
+    "type": "video",
+    "video_path": "/static/sign_videos/school_college.mp4"
+  },
+  "which_collegeschool_are_you_from": {
+    "original_name": "which collegeschool are you from",
+    "type": "video",
+    "video_path": "/static/sign_videos/which_collegeschool_are_you_from.mp4"
+  },
+  "who_are_you": {
+    "original_name": "who are you",
+    "type": "video",
+    "video_path": "/static/sign_videos/who_are_you.mp4"
+  },
+  "why_are_you_angry": {
+    "original_name": "why are you angry",
+    "type": "video",
+    "video_path": "/static/sign_videos/why_are_you_angry.mp4"
+  },
+  "why_are_you_crying": {
+    "original_name": "why are you crying",
+    "type": "video",
+    "video_path": "/static/sign_videos/why_are_you_crying.mp4"
+  },
+  "why_are_you_disappointed": {
+    "original_name": "why are you disappointed",
+    "type": "video",
+    "video_path": "/static/sign_videos/why_are_you_disappointed.mp4"
+  },
+  "bad_1": {
+    "original_name": "bad 1",
+    "type": "video",
+    "video_path": "/static/sign_videos/bad_1.mp4"
+  },
+  "you_are_bad": {
+    "original_name": "you are bad",
+    "type": "video",
+    "video_path": "/static/sign_videos/you_are_bad.mp4"
+  },
+  "you_are_good": {
+    "original_name": "you are good",
+    "type": "video",
+    "video_path": "/static/sign_videos/you_are_good.mp4"
+  },
+  "you_are_welcome": {
+    "original_name": "you are welcome",
+    "type": "video",
+    "video_path": "/static/sign_videos/you_are_welcome.mp4"
+  },
+  "can_do": {
+    "original_name": "can do",
+    "type": "video",
+    "video_path": "/static/sign_videos/can_do.mp4"
+  },
+  "you_can_do_it": {
+    "original_name": "you can do it",
+    "type": "video",
+    "video_path": "/static/sign_videos/you_can_do_it.mp4"
+  },
+  "care": {
+    "original_name": "care",
+    "type": "video",
+    "video_path": "/static/sign_videos/care.mp4"
+  },
+  "donotcare": {
+    "original_name": "donotcare",
+    "type": "video",
+    "video_path": "/static/sign_videos/donotcare.mp4"
+  },
+  "dont_care": {
+    "original_name": "dont care",
+    "type": "video",
+    "video_path": "/static/sign_videos/dont_care.mp4"
+  },
+  "you_do_anything,_i_do_not_care": {
+    "original_name": "you do anything, i do not care",
+    "type": "video",
+    "video_path": "/static/sign_videos/you_do_anything,_i_do_not_care.mp4"
+  },
+  "you_need_a_medicine,_take_this_one.": {
+    "original_name": "you need a medicine, take this one.",
+    "type": "video",
+    "video_path": "/static/sign_videos/you_need_a_medicine,_take_this_one..mp4"
+  },
+  "you_need_a_medicine,_take_this_one": {
+    "original_name": "you need a medicine, take this one",
+    "type": "video",
+    "video_path": "/static/sign_videos/you_need_a_medicine,_take_this_one.mp4"
+  }
+}

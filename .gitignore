@@ -1,0 +1,38 @@
+# Python virtual environment
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Flask/runtime outputs
+uploads/
+*.log
+
+# Local temp files
+tempCodeRunnerFile.py
+
+# Build/test artifacts
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Large dataset/media files (keep repo lightweight)
+ISL_CSLRT_Corpus/
+static/sign_videos/
+*.mp4
+*.MP4
+
+# Generated training datasets
+sign_sequence_data.csv
+sign_sequence_data2.csv
