@@ -1,59 +1,63 @@
-# Sign Language Web App
+# ISL Sign Language Web App
 
-A Flask-based web application for Indian Sign Language (ISL) recognition and translation.
+ISL Sign Language Web App is a Flask-based utility that helps bridge communication gaps by translating hand gestures into text and speech, and converting input text into available ISL visual resources (images/videos).
 
-The app supports:
-- Real-time sign recognition from webcam
-- Video upload for sign prediction
-- Text-to-sign lookup using indexed image/video assets
-- Speech output using text-to-speech
+It combines real-time webcam inference, uploaded video inference, and text-to-sign retrieval in one web interface.
 
 ## Features
 
-- Live sign detection using MediaPipe hand landmarks
-- Sequence classification using a TensorFlow LSTM model
-- Confidence-based prediction filtering
-- Text-to-sign mapping from indexed static assets
-- API endpoints for health checks and live prediction state
+- Real-time sign recognition from webcam stream
+- Sequence-based gesture classification using TensorFlow LSTM
+- Text-to-Speech output for recognized signs
+- Video upload and offline sign prediction
+- Text-to-sign search across indexed ISL media assets
+- Sign availability API for quick integrations and UI auto-complete
+- Confidence thresholding and buffered prediction logic for stability
 
-## Tech Stack
+## Architecture
 
-- Python 3.10+
-- Flask
-- OpenCV
-- MediaPipe
-- TensorFlow/Keras
-- scikit-learn + joblib
+Single-service Python web architecture:
 
-## Project Structure
+| Component | Tech Stack | Purpose |
+|---|---|---|
+| Web API + UI | Flask + Jinja2 | Serves pages and JSON endpoints |
+| CV Pipeline | OpenCV + MediaPipe | Captures frames and extracts hand landmarks |
+| ML Inference | TensorFlow/Keras + joblib | Loads LSTM model and label encoder for prediction |
+| Dataset Indexing | Python scripts | Builds image/video lookup index for text-to-sign |
+| Data Persistence | JSON + file storage | Sign index and uploaded video handling |
 
-- [app.py](app.py): Main Flask app and API routes
-- [train_model.py](train_model.py): Model training script
-- [index_dataset.py](index_dataset.py): Builds sign index JSON
-- [requirements.txt](requirements.txt): Python dependencies
-- [templates/index.html](templates/index.html): Main UI template
-- [static/sign_images/](static/sign_images/): Sign images used by text-to-sign
-- [sign_lstm_model.keras](sign_lstm_model.keras): Trained model
-- [label_encoder.joblib](label_encoder.joblib): Label encoder
-- [sign_index.json](sign_index.json): Indexed sign lookup metadata
+## Prerequisites
 
-## Setup
+Install these before running:
 
-### 1. Clone the repository
+- Python 3.10 or 3.11 (recommended for TensorFlow 2.15 compatibility)
+- pip (bundled with Python)
+- Webcam (for live recognition)
+
+Verify installation:
+
+```powershell
+python --version
+pip --version
+```
+
+## Quick Start
+
+### 1. Clone the Repository
 
 ```powershell
 git clone <your-repo-url>
 cd sign-language-webapp
 ```
 
-### 2. Create and activate virtual environment
+### 2. Create and Activate Virtual Environment
 
 ```powershell
 py -3.10 -m venv .venv
-.venv\Scripts\Activate.ps1
+.\.venv\Scripts\Activate.ps1
 ```
 
-### 3. Install dependencies
+### 3. Install Dependencies
 
 ```powershell
 python -m pip install --upgrade pip
@@ -61,55 +65,249 @@ pip install -r requirements.txt
 pip install pyttsx3
 ```
 
-## Run the App
+### 4. Run the Web App
 
 ```powershell
 py app.py
 ```
 
 Open in browser:
+
+- http://127.0.0.1:5000
 - http://localhost:5000
 
-## First-Run Notes
+## Dataset (External Download)
 
-If startup logs show model/index warnings:
-- Run `py train_model.py` to generate/update model artifacts.
-- Run `py index_dataset.py` to generate/update [sign_index.json](sign_index.json).
+The full ISL corpus is intentionally not committed to this repository to keep clone/push size manageable.
 
-## API Endpoints (Quick Reference)
+Use the original dataset source link:
 
-- `GET /` : Main web interface
-- `GET /health` : Service and model status
-- `POST /start_camera` : Start webcam stream
-- `POST /stop_camera` : Stop webcam stream
-- `GET /video_feed` : MJPEG live feed
-- `GET /current_prediction` : Latest recognized sign
-- `POST /clear_prediction` : Reset current prediction
-- `POST /upload` : Upload video for prediction
-- `POST /text_to_sign` : Text to sign lookup
-- `GET /available_signs` : List indexed signs
-- `POST /speak` : Text-to-speech output
+- Dataset URL: `https://data.mendeley.com/datasets/kcmpdxky7p/1`
+- Dataset size: approximately 8 GB
+
+Expected local folder after download and extraction:
+
+```text
+sign-language-webapp/
+|-- ISL_CSLRT_Corpus/
+|   |-- Frames_Word_Level/
+|   |-- Videos_Sentence_Level/
+|   |-- corpus_csv_files/
+|   |-- ISL_CSLRT.txt
+```
+
+Important:
+
+- Keep the folder name exactly as `ISL_CSLRT_Corpus`.
+- Place it at the project root (same level as `app.py`).
+- After adding dataset files, run `py index_dataset.py` to extract/copy only required sign assets into `static/sign_images/` and `static/sign_videos/`, then rebuild `sign_index.json`.
+
+If you only want inference with pre-trained files, you can run the app without downloading the full raw dataset.
+
+## Model and Dataset Workflow
+
+Use these scripts when you want to prepare data or retrain:
+
+Recommended order for a fresh setup with new raw data:
+
+1. Download and extract dataset into `ISL_CSLRT_Corpus/`
+2. Run `py index_dataset.py`
+3. (Optional) Run `py collect_data.py` for custom gestures
+4. (Optional) Run `py train_model.py` to retrain
+5. Run `py app.py`
+
+### Collect Training Data
+
+```powershell
+py collect_data.py
+```
+
+What it does:
+- Captures 30-frame gesture sequences
+- Extracts normalized two-hand landmarks (126 features/frame)
+- Stores flattened sequences in `sign_sequence_data.csv`
+- Optionally applies augmentation
+
+### Train Model
+
+```powershell
+py train_model.py
+```
+
+Outputs:
+- `sign_lstm_model.keras`
+- `best_model_checkpoint.keras`
+- `label_encoder.joblib`
+- `training_history.png`
+
+### Build Text-to-Sign Index
+
+```powershell
+py index_dataset.py
+```
+
+Outputs:
+- `sign_index.json`
+- Media copies into `static/sign_images/` and `static/sign_videos/`
+
+### Optional Standalone Real-Time Predictor
+
+```powershell
+py real_time_predict.py
+```
+
+## Runtime Configuration
+
+Important defaults in `app.py`:
+
+- Model file: `sign_lstm_model.keras`
+- Encoder file: `label_encoder.joblib`
+- Index file: `sign_index.json`
+- Upload folder: `uploads/`
+- Frames per sample: 30
+- Features per frame: 126
+- Confidence threshold: 0.75
+- Server host/port: `0.0.0.0:5000`
+
+## API Endpoints
+
+All routes are served from the same Flask app.
+
+### Core
+
+- `GET /` : Main web UI
+- `GET /health` : Status of model, camera, and indexed signs
+
+### Live Recognition
+
+- `POST /start_camera` : Initializes webcam stream
+- `POST /stop_camera` : Stops webcam stream
+- `GET /video_feed` : MJPEG stream for live frames
+- `GET /current_prediction` : Latest stable prediction object
+- `POST /clear_prediction` : Resets prediction state
+
+### Speech
+
+- `POST /speak` : Speaks supplied text using local TTS engine
+
+Payload:
+
+```json
+{
+  "text": "hello"
+}
+```
+
+### Upload-Based Prediction
+
+- `POST /upload` : Uploads a video and returns translated signs
+
+Form-data key:
+- `video`
+
+### Text-to-Sign
+
+- `POST /text_to_sign` : Maps text words/phrases to indexed sign media
+- `GET /available_signs` : Returns all indexed sign keys
+
+`/text_to_sign` payload example:
+
+```json
+{
+  "text": "how are you"
+}
+```
+
+## Project Structure
+
+```text
+sign-language-webapp/
+|-- app.py
+|-- collect_data.py
+|-- train_model.py
+|-- real_time_predict.py
+|-- index_dataset.py
+|-- requirements.txt
+|-- sign_lstm_model.keras
+|-- label_encoder.joblib
+|-- sign_index.json
+|-- templates/
+|   |-- index.html
+|-- static/
+|   |-- sign_images/
+|   |-- sign_videos/
+|-- uploads/
+|-- ISL_CSLRT_Corpus/
+```
 
 ## Troubleshooting
 
-- Camera not opening:
-  - Close apps already using webcam (Zoom/Teams/Camera app).
-  - Verify webcam permission in Windows Privacy settings.
+### Backend/App Startup
 
-- TensorFlow installation issues:
-  - Use Python 3.10 or 3.11 for best compatibility with current dependency versions.
+- `ModuleNotFoundError`:
+  - Activate virtual environment and reinstall dependencies.
 
-- No predictions in live mode:
-  - Ensure hand is visible and well-lit.
-  - Wait until sequence buffer fills (30 frames).
+- `pyttsx3` import error:
+  - Install it manually with `pip install pyttsx3`.
 
-- Text-to-sign not finding phrases:
-  - Run [index_dataset.py](index_dataset.py) again after adding new media.
+- TensorFlow install issues on newest Python:
+  - Use Python 3.10/3.11 virtual environment.
 
-## Notes on Repository Size
+### Camera and Live Predictions
 
-Large raw datasets/videos are excluded via [.gitignore](.gitignore) to keep the repository lightweight. If someone needs full training data, share it separately (drive/cloud storage).
+- Camera does not open:
+  - Close other apps using webcam (Zoom/Teams/Camera app).
+  - Check Windows privacy camera permissions.
 
-## License
+- Predictions remain "Detecting...":
+  - Keep hand visible for enough frames.
+  - Improve lighting and reduce background clutter.
 
-Add your preferred license (MIT/Apache-2.0/etc.) in a `LICENSE` file.
+- Wrong/unstable predictions:
+  - Retrain with more samples per class.
+  - Ensure gesture consistency during collection.
+
+### Text-to-Sign
+
+- Missing signs in output:
+  - Confirm dataset is present under `ISL_CSLRT_Corpus/` with expected subfolders.
+  - Run `py index_dataset.py` after adding new data.
+  - Verify files exist under `static/sign_images/` or `static/sign_videos/`.
+
+## Security and Deployment Notes
+
+- Current setup is intended for local/dev usage.
+- TTS executes locally on the host machine.
+- Uploaded media is stored in local `uploads/`.
+
+For production, consider:
+
+- Running behind HTTPS reverse proxy
+- Restricting upload size and file types
+- Adding authentication/authorization
+- Storing uploads and models in managed storage
+
+## Repository Size Guidance
+
+Large raw datasets and videos are excluded by `.gitignore` to keep cloning/pushing manageable. Share full corpora separately (cloud storage, release artifacts, or dataset mirror).
+
+## Documentation Maintenance Checklist
+
+When changing behavior, update docs in the same PR:
+
+- If API routes change, update endpoint sections in this README.
+- If model files or training flow changes, update workflow and output filenames.
+- If startup commands change, update Quick Start.
+- If dependencies change, update prerequisites and install commands.
+- If folder structure changes, update the project tree.
+- Update this README date stamp after docs sync.
+
+## Documentation Status
+
+Last updated: 2026-04-19
+
+## Dataset Citation
+
+If your dataset source has a required citation/license statement, add it here before public release.
+
+
